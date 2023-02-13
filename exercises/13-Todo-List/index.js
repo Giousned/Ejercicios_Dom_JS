@@ -1,49 +1,60 @@
 // Your code here
 
 let addToDo = document.getElementById("addToDo");
+// let ulElement = document.getElementById("myClass");
+let trashIcon = document.getElementsByClassName("fa-trash");
 
-let li = document.createElement("li");
-li.innerHTML = `<span><i class="fa fa-trash"></i></span>${addToDo}`;
-document.getElementById("ul").appendChild(li);
+function addTask () {
+			// let valorInput = addToDo.value;
+	let li = document.createElement("li");
+	li.innerHTML = `<span><i class="fa fa-trash"></i></span>${addToDo.value}`;
+	document.querySelector("#myClass").appendChild(li);
+			// document.ulElement.appendChild(li);
+}
+
+addToDo.addEventListener("keypress", function(e) {
+	//your code here
+	if (e.key === "Enter"){
+		addTask();
+	}
+});
+
+// function deleteTask (e) {
+// 	
+// }
+
+trashIcon.addEventListener("click", function(e) {
+	//your code here
+	parentNode.removeChild(e);
+});
 
 
-/* PROBAR DE INTERNET
-var agregarTarea = function(){
-		var tarea = tareaInput.value,
-			nuevaTarea = document.createElement("li"),
-			enlace = document.createElement("a"),
-			contenido = document.createTextNode(tarea);
 
-		if (tarea === "") {
-			tareaInput.setAttribute("placeholder", "Agrega una tarea valida");
-			tareaInput.className = "error";
-			return false;
-		}
+	// for (var i = 0; i <= lista.children.length -1; i++) {
+	// 	lista.children[i].addEventListener("click", function(){
+	// 		this.parentNode.removeChild(this);
+	// 	});
+	// } e.target.classList.contains("fa-search")
 
-		// Agregamos el contenido al enlace
-		enlace.appendChild(contenido);
-		// Le establecemos un atributo href
-		enlace.setAttribute("href", "#");
-		// Agrergamos el enlace (a) a la nueva tarea (li)
-		nuevaTarea.appendChild(enlace);
-		// Agregamos la nueva tarea a la lista
-		lista.appendChild(nuevaTarea);
 
-		tareaInput.value = "";
+// window.trashIcon.addEventListener("click", function() {
+// 		this.parentNode.removeChild(this);
+// });
 
-		for (var i = 0; i <= lista.children.length -1; i++) {
-			lista.children[i].addEventListener("click", function(){
-				this.parentNode.removeChild(this);
-			});
-		}
-*/
 
-/* OTRO 
+/* PROBAR INTERNET
 const addForm = document.querySelector('.add');
  
 addForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const newToDo = addForm.add.value;
-    console.log(newToDo);
+	e.preventDefault();
+	const newToDo = addForm.add.value;
+	console.log(newToDo);
 });
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+// 	$('div').on('click', '[data-fa-i2svg]', function () {
+// 	  alert('You clicked the icon itself');
+// 	});
+//   });
 */
